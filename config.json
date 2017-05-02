@@ -1,0 +1,15 @@
+{
+  "repo": "cronicc/website",
+  "name": "Bot.io (Main)",
+  "handle": "botio",
+  "script_timeout": 3600,
+  "private_dir": "./private",
+  "public_dir": "./public",
+  "port": 8000,
+  "use_queue": true,
+  "host": "cronic.dynu.com",
+  "whitelist": [
+    "cronicc"
+  ]
+}
+
