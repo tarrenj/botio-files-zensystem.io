@@ -4,5 +4,9 @@ var shell = require('shelljs');
 // Recursively copy latest build to public directory
 shell.exec('cp -r /mnt/latest/* /mnt/public');
 
+var root_url = botio.public_url
+
+root_url = root_url.slice(0, -16);
+
 botio.message('#### Published');
-botio.message('You can view your repo files at: '+botio.public_url.slice(0, -16));
+botio.message('You can view your repo files at: '+root_url);
