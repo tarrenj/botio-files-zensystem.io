@@ -5,4 +5,4 @@ var shell = require('shelljs');
 shell.exec('cp -r /mnt/latest/* /mnt/public');
 
 botio.message('#### Published');
-botio.message('You can view your repo files at: '+botio.public_url);
+botio.message('You can view your repo files at: '+botio.public_url.slice(0, -16);
