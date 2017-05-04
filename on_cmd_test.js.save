@@ -10,10 +10,10 @@ ls().forEach(function(file) {
 botio.message('#### Hello world');
 botio.message('Your Botio installation works! View full output for the list of files in this repo');*/
 
-//shell.config.silent = true;
-
 var a = now();
 shell.echo("Running 'bundle install --path vendor/bundle'\n");
+
+//shell.silent();
 
 shell.exec('bundle install --path ./vendor/bundle');
 var b = now();
@@ -44,6 +44,6 @@ var h = now();
 
 shell.echo("\ngulp finished: " + (h - g) / 1000 + " seconds\n");
 
-shell.exec('rm -rf /mnt/latest/*');
+shell.exec('rm -rf /latest/*');
 
-shell.exec('cp -r ./_site/* /mnt/latest/');
+shell.exec('cp -r ./_site/* /latest/');
