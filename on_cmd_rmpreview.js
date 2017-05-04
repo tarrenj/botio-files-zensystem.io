@@ -1,4 +1,4 @@
-//var botio = require(process.env['BOTIO_MODULE']);
+var botio = require(process.env['BOTIO_MODULE']);
 var shell = require('shelljs');
 
 // Recursively copy latest build to public directory
