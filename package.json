@@ -1,7 +1,8 @@
-{ "name": "botio-scripts"
+{ "name": "botio-files-zencash.io"
 , "version": "0.0.1"
 , "dependencies": {
     "shelljs": "0.0.5pre4"
+    "performance-now": ">=2.1.0"
   }
 }
 
