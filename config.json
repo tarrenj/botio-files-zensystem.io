@@ -3,7 +3,7 @@
   "name": "MushinBot (webbuild.zencash.io)",
   "handle": [
     "botio", "MushinBot", "mushinbot"
-  ]
+  ],
   "script_timeout": 3600,
   "private_dir": "./private",
   "public_dir": "/mnt/public",
