@@ -4,37 +4,9 @@ var now = require("performance-now")
 
 
 var a = now();
-shell.echo("Running 'bundle install --path vendor/bundle'\n");
+shell.echo("Running the build chain\n");
 
-shell.exec('bundle install --path ./vendor/bundle');
+shell.exec('bundle install --path ./vendor/bundle && npm install && bower install && rm -rf _site/* && gulp sass concat jekyll-build && rm -rf /mnt/latest/* && cp -r ./_site/* /mnt/latest/');
 var b = now();
 
-shell.echo("\nBundle finished: " + (b - a) / 1000 + " seconds\n");
-
-var c = now();
-shell.echo("Running 'npm install'\n");
-
-shell.exec('npm install && npm install gulp');
-var d = now();
-
-shell.echo("\nnpm finished: " + (d - c) / 1000 + " seconds\n");
-
-var e = now();
-shell.echo("Running 'bower install':\n");
-
-shell.exec('bower install');
-var f = now();
-
-shell.echo("\nbower finished: " + (f - e) / 1000 + " seconds\n");
-
-var g = now();
-shell.echo("Running 'gulp sass concat jekyll-build': " + g + "\n");
-
-shell.exec('gulp sass concat jekyll-build');
-var h = now();
-
-shell.echo("\ngulp finished: " + (h - g) / 1000 + " seconds\n");
-
-shell.exec('rm -rf /mnt/latest/*');
-
-shell.exec('cp -r ./_site/* /mnt/latest/');
+shell.echo("\nBuild chain finished: " + (b - a) / 1000 + " seconds\n");
