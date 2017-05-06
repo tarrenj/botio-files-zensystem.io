@@ -14,7 +14,7 @@ shell.echo("\nBundle finished: " + (b - a) / 1000 + " seconds\n");
 var c = now();
 shell.echo("Running 'npm install'\n");
 
-shell.exec('npm install');
+shell.exec('npm install && npm install gulp');
 var d = now();
 
 shell.echo("\nnpm finished: " + (d - c) / 1000 + " seconds\n");
