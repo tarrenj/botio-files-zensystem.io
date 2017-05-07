@@ -1,14 +1,15 @@
 {
-  "repo": "cronicc/website",
-  "name": "MushinBot (webbuild.zencash.io)",
+  "repo": "zencashio/website",
+  "name": "MushinBot (devweb.zencash.io)",
   "handle": "botio",
   "script_timeout": 3600,
   "private_dir": "./private",
   "public_dir": "/mnt/public",
   "port": 8000,
   "use_queue": true,
-  "host": "cronic.dynu.com",
+  "host": "devweb.zencash.io",
   "whitelist": [
     "cronicc", "joshuayabut", "mdlorey"
   ]
 }
+
