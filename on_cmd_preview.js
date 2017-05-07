@@ -8,4 +8,4 @@ root_url = root_url.slice(0, -16);
 shell.exec('cp -r /mnt/latest/* /mnt/public');
 
 botio.message('#### Published');
-botio.message('You can view your repo files at: '+root_url);
+botio.message('You can view your generated site at: '+root_url);
