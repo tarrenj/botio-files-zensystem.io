@@ -1,12 +1,41 @@
 var botio = require(process.env['BOTIO_MODULE']);
 var shell = require('shelljs');
-var now = require("performance-now")
+var now = require('performance-now');
+var cmd;
+var suppress = true;
+var runtime = false;
+
+// Run commdand synchronously, exit if error
+function runCommand(cmd, suppress, runtime) {
+    shell.echo('\nRunning command "' + cmd + '"\n');
+    var start = now();
+    var run = shell.exec(cmd, {silent:suppress});
+    var end = now();
+    if (runtime) {
+        shell.echo('\nCommand "' + cmd + '" finished after ' + (end - start) / 1000 + ' seconds\n')
+    }
+    if (run.code !== 0) {
+        shell.echo('\nError: Build failed at step "' + cmd + '" with ExitCode ' + run.code + '\n');
+        botio.message('Error: Build failed at step "' + cmd + '" with ExitCode ' + run.code);
+        shell.exit(1);
+    }
+}
 
 
-var a = now();
-shell.echo("Running the build chain\n");
+cmd = 'bundle install --path ./vendor/bundle';
+runCommand(cmd, suppress, runtime);
 
-shell.exec('bundle install --path ./vendor/bundle && npm install && bower install && rm -rf _site/* && gulp sass concat jekyll-build && cp -r ./_site/* /mnt/live');
-var b = now();
+cmd = 'npm install';
+runCommand(cmd, suppress, runtime);
 
-shell.echo("\nBuild chain finished: " + (b - a) / 1000 + " seconds\n");
+cmd = 'bower install';
+runCommand(cmd, suppress, runtime);
+
+cmd = 'rm -rf _site/*';
+runCommand(cmd, suppress, runtime);
+
+cmd = 'gulp sass concat jekyll-build';
+runCommand(cmd, suppress, runtime);
+
+cmd = 'cp -r ./_site/* /mnt/live';
+runCommand(cmd, suppress, runtime);
