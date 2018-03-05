@@ -35,10 +35,13 @@ runCommand(cmd, suppress, runtime);
 cmd = 'rm -rf _site/*';
 runCommand(cmd, suppress, runtime);
 
+cmd = 'gulp sass concat';
+runCommand(cmd, suppress, runtime);
+
 cmd = 'chcp 65001';
 runCommand(cmd, suppress, runtime);
 
-cmd = 'gulp sass concat jekyll-build';
+cmd = 'JEKYLL_ENV=production bundle exec jekyll build';
 runCommand(cmd, suppress, runtime);
 
 cmd = 'rm -rf /mnt/latest/*';
