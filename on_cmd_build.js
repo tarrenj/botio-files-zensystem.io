@@ -38,9 +38,6 @@ runCommand(cmd, suppress, runtime);
 cmd = 'gulp sass concat';
 runCommand(cmd, suppress, runtime);
 
-cmd = 'chcp 65001';
-runCommand(cmd, suppress, runtime);
-
 cmd = 'JEKYLL_ENV=production bundle exec jekyll build';
 runCommand(cmd, suppress, runtime);
 
