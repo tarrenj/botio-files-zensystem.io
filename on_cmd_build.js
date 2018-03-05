@@ -35,6 +35,9 @@ runCommand(cmd, suppress, runtime);
 cmd = 'rm -rf _site/*';
 runCommand(cmd, suppress, runtime);
 
+cmd = 'chcp 65001';
+runCommand(cmd, suppress, runtime);
+
 cmd = 'gulp sass concat jekyll-build';
 runCommand(cmd, suppress, runtime);
 
