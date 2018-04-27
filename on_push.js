@@ -2,8 +2,8 @@ var botio = require(process.env['BOTIO_MODULE']);
 var shell = require('shelljs');
 var now = require('performance-now');
 var cmd;
-var suppress = true;
-var runtime = false;
+var suppress = false;
+var runtime = true;
 
 // Run commdand synchronously, exit if error
 function runCommand(cmd, suppress, runtime) {
