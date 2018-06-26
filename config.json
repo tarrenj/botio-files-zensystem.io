@@ -1,15 +1,14 @@
 {
-  "repo": "ZencashOfficial/website",
-  "name": "MushinBot (devweb.zensystem.io)",
+  "repo": "tarrenj/website",
+  "name": "tarrenj",
   "handle": "botio",
   "script_timeout": 3600,
   "private_dir": "./private",
   "public_dir": "/mnt/public",
   "port": 8000,
   "use_queue": true,
-  "host": "devweb.zensystem.io",
   "whitelist": [
-    "cronicc", "tarrenj", "mdlorey"
+    "cronicc", "tarrenj"
   ]
 }
 
