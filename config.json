@@ -1,6 +1,6 @@
 {
   "private_repo": "data",
-  "host": "http://metrics.eu.zenchain.info",
+  "host": "metrics.eu.zenchain.info",
   "repo": "tarrenj/website",
   "name": "tarrenj",
   "handle": "botio",
