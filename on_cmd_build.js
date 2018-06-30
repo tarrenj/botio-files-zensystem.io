@@ -44,6 +44,9 @@ runCommand(cmd, suppress, runtime);
 cmd = 'rm -rf /mnt/latest/*';
 runCommand(cmd, suppress, runtime);
 
+cmd = 'mkdir -p /mnt/latest/';
+runCommand(cmd, suppress, runtime);
+
 cmd = 'cp -r ./_site/* /mnt/latest/';
 runCommand(cmd, suppress, runtime);
 
