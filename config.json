@@ -1,7 +1,7 @@
 {
   "private_repo": "data",
   "host": "metrics.eu.zenchain.info",
-  "repo": "tarrenj/website",
+  "repo": "ZencashOfficial/website-private",
   "name": "tarrenj",
   "handle": "botio",
   "script_timeout": 3600,
